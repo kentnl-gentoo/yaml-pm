@@ -24,4 +24,4 @@ resources:
   ChangeLog: http://fisheye2.atlassian.com/changelog/cpan/trunk/YAML
   license: http://dev.perl.org/licenses/
   repository: http://svn.ali.as/cpan/trunk/YAML
-version: 0.69_01
+version: 0.69_02
