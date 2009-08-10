@@ -14,9 +14,8 @@ NOTE
     If you really need to use this version of YAML.pm it will always be
     available as YAML::Old.
 
-    If you don't care which YAML module use, as long as it's the best
-    one installed on your system, use YAML::Any, which is included in
-    the current YAML distribution.
+    If you don't care which YAML module use, as long as it's the best one
+    installed on your system, use YAML::Any.
 
     The rest of this documentation is left unchanged, until YAML.pm is
     switched over to the new UI-only version.
@@ -625,7 +624,10 @@ COPYRIGHT
 
     Copyright (c) 2001, 2002, 2005. Brian Ingerson.
 
+    Some parts copyright (c) 2009 Adam Kennedy
+
     This program is free software; you can redistribute it and/or modify it
     under the same terms as Perl itself.
 
     See <http://www.perl.com/perl/misc/Artistic.html>
+
