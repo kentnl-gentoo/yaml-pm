@@ -48,7 +48,7 @@ SYNOPSIS
         ...
         
     # Dump the Perl data structures back into YAML.
-        print Dump($string, $arrayref, $hashref); 
+        print Dump($string, $arrayref, $hashref);
         
     # YAML::Dump is used the same way you'd use Data::Dumper::Dumper
         use Data::Dumper;
@@ -141,10 +141,10 @@ YAML IMPLEMENTATIONS IN PERL
         bugs. It is mostly a great tool for dumping Perl data structures to
         a readable form.
 
-    YAML::Lite
-        The point of YAML::Lite is to strip YAML down to the 90% that people
+    YAML::Tiny
+        The point of YAML::Tiny is to strip YAML down to the 90% that people
         use most and offer that in a small, fast, stable, pure Perl form.
-        YAML::Lite will simply die when it is asked to do something it
+        YAML::Tiny will simply die when it is asked to do something it
         can't.
 
     YAML::Syck
@@ -624,7 +624,7 @@ COPYRIGHT
 
     Copyright (c) 2001, 2002, 2005. Brian Ingerson.
 
-    Some parts copyright (c) 2009 Adam Kennedy
+    Some parts copyright (c) 2009 - 2010 Adam Kennedy
 
     This program is free software; you can redistribute it and/or modify it
     under the same terms as Perl itself.

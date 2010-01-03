@@ -45,6 +45,7 @@ t/changes.t
 t/dump-basics.t
 t/dump-blessed.t
 t/dump-code.t
+t/dump-file-utf8.t
 t/dump-file.t
 t/dump-nested.t
 t/dump-opts.t
