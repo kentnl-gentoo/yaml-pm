@@ -34,9 +34,6 @@ MANIFEST			This list of files
 META.yml
 README
 t/2-scalars.t
-t/97_meta.t
-t/98_pod.t
-t/99_pmv.t
 t/Base.pm
 t/basic-tests.t
 t/bugs-emailed.t
@@ -74,3 +71,6 @@ t/svk-config.yaml
 t/svk.t
 t/test.t
 t/TestYAML.pm
+xt/meta.t
+xt/pmv.t
+xt/pod.t
