@@ -20,9 +20,10 @@ no_index:
     - t
     - xt
 requires:
+  Filter::Util::Call: 0
   perl: 5.8.1
 resources:
   homepage: http://github.com/ingydotnet/yaml-pm/tree
   license: http://dev.perl.org/licenses/
   repository: git://github.com/ingydotnet/yaml-pm.git
-version: 0.74
+version: 0.75
