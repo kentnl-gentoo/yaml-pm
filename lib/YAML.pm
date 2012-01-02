@@ -2,7 +2,7 @@ use 5.008001;
 package YAML;
 use YAML::Mo;
 
-our $VERSION = '0.77';
+our $VERSION = '0.78';
 
 use Exporter;
 push @YAML::ISA, 'Exporter';
@@ -662,7 +662,7 @@ optimum human readability.
 
 =item plain scalar
 
-A plain sclar is unquoted. All plain scalars are automatic candidates
+A plain scalar is unquoted. All plain scalars are automatic candidates
 for "implicit tagging". This means that their tag may be determined
 automatically by examination. The typical uses for this are plain alpha
 strings, integers, real numbers, dates, times and currency.

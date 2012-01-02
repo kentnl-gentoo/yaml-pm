@@ -27,7 +27,6 @@ lib/YAML/Loader.pm
 lib/YAML/Loader/Base.pm
 lib/YAML/Marshall.pm
 lib/YAML/Mo.pm
-lib/YAML/Mo.pod
 lib/YAML/Node.pm
 lib/YAML/Tag.pm
 lib/YAML/Types.pm
