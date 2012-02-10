@@ -2,13 +2,13 @@ use strict;
 use warnings;
 package YAML::Node;
 
-our $VERSION = '0.79';
+our $VERSION = '0.80';
 
 use YAML::Tag;
 require YAML::Mo;
 
 use Exporter;
-our @ISA     = 'Exporter';
+our @ISA     = qw(Exporter YAML::Mo::Object);
 our @EXPORT  = qw(ynode);
 
 sub ynode {
