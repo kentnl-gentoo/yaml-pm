@@ -20,4 +20,4 @@ no_index:
 requires:
   Filter::Util::Call: 0
   perl: 5.008001
-version: 0.82
+version: 0.83

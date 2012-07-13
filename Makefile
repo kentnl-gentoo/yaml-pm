@@ -21,7 +21,7 @@
 #     NAME => q[YAML]
 #     NO_META => q[1]
 #     PREREQ_PM => { Filter::Util::Call=>q[0], ExtUtils::MakeMaker=>q[6.59] }
-#     VERSION => q[0.82]
+#     VERSION => q[0.83]
 #     VERSION_FROM => q[lib/YAML.pm]
 #     clean => { FILES=>q[MANIFEST MANIFEST MANIFEST.SKIP LICENSE] }
 #     dist => { PREOP=>q[$(PERL) -I. "-MModule::Install::Admin" -e "dist_preop(q($(DISTVNAME)))"] }
@@ -65,11 +65,11 @@ DIRFILESEP = /
 DFSEP = $(DIRFILESEP)
 NAME = YAML
 NAME_SYM = YAML
-VERSION = 0.82
+VERSION = 0.83
 VERSION_MACRO = VERSION
-VERSION_SYM = 0_82
+VERSION_SYM = 0_83
 DEFINE_VERSION = -D$(VERSION_MACRO)=\"$(VERSION)\"
-XS_VERSION = 0.82
+XS_VERSION = 0.83
 XS_VERSION_MACRO = XS_VERSION
 XS_DEFINE_VERSION = -D$(XS_VERSION_MACRO)=\"$(XS_VERSION)\"
 INST_ARCHLIB = blib/arch
@@ -308,7 +308,7 @@ RCS_LABEL = rcs -Nv$(VERSION_SYM): -q
 DIST_CP = best
 DIST_DEFAULT = tardist
 DISTNAME = YAML
-DISTVNAME = YAML-0.82
+DISTVNAME = YAML-0.83
 
 
 # --- MakeMaker macro section:
@@ -845,7 +845,7 @@ testdb_static :: testdb_dynamic
 # --- MakeMaker ppd section:
 # Creates a PPD (Perl Package Description) for a binary distribution.
 ppd :
-	$(NOECHO) $(ECHO) '<SOFTPKG NAME="$(DISTNAME)" VERSION="0.82">' > $(DISTNAME).ppd
+	$(NOECHO) $(ECHO) '<SOFTPKG NAME="$(DISTNAME)" VERSION="0.83">' > $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) '    <ABSTRACT>YAML Ain'\''t Markup Language (tm)</ABSTRACT>' >> $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) '    <AUTHOR>Ingy döt Net &lt;ingy@cpan.org&gt;</AUTHOR>' >> $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) '    <IMPLEMENTATION>' >> $(DISTNAME).ppd
