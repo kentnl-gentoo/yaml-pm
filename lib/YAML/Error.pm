@@ -1,7 +1,7 @@
 package YAML::Error;
 use YAML::Mo;
 
-our $VERSION = '0.84';
+our $VERSION = '0.85';
 
 has 'code';
 has 'type' => default => sub {'Error'};
@@ -150,11 +150,11 @@ YAML_LOAD_WARN_GLOB_IO
   Can't load an IO filehandle. Yet!!!
 ...
 
-%line_adjust = map {($_, 1)} 
+%line_adjust = map {($_, 1)}
   qw(YAML_PARSE_ERR_BAD_MAJOR_VERSION
-     YAML_PARSE_WARN_BAD_MINOR_VERSION 
-     YAML_PARSE_ERR_TEXT_AFTER_INDICATOR 
-     YAML_PARSE_ERR_NO_ANCHOR 
+     YAML_PARSE_WARN_BAD_MINOR_VERSION
+     YAML_PARSE_ERR_TEXT_AFTER_INDICATOR
+     YAML_PARSE_ERR_NO_ANCHOR
      YAML_PARSE_ERR_MANY_EXPLICIT
      YAML_PARSE_ERR_MANY_IMPLICIT
      YAML_PARSE_ERR_MANY_ANCHOR
@@ -193,6 +193,8 @@ our @ISA = 'YAML::Error';
 
 __END__
 
+=encoding UTF-8
+
 =head1 NAME
 
 YAML::Error - Error formatting class for YAML modules
@@ -212,7 +214,7 @@ Ingy döt Net <ingy@cpan.org>
 
 =head1 COPYRIGHT
 
-Copyright (c) 2006, 2011-2012. Ingy döt Net. All rights reserved.
+Copyright (c) 2006, 2011-2013. Ingy döt Net. All rights reserved.
 
 This program is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.

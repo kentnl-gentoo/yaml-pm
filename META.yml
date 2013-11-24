@@ -24,10 +24,7 @@ requires:
   Filter::Util::Call: 0
   perl: 5.8.1
 resources:
-  homepage: https://github.com/ingydotnet/yaml-pm/tree
+  homepage: https://github.com/ingydotnet/yaml-pm
   license: http://dev.perl.org/licenses/
-  repository:
-    type: git
-    url: git://github.com/ingydotnet/yaml-pm.git
-    web: https://github.com/ingydotnet/yaml-pm/tree
-version: 0.84
+  repository: git://github.com/ingydotnet/yaml-pm
+version: 0.85

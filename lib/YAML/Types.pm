@@ -1,7 +1,7 @@
 package YAML::Types;
 use YAML::Mo;
 
-our $VERSION = '0.84';
+our $VERSION = '0.85';
 
 use YAML::Node;
 
@@ -64,7 +64,7 @@ sub yaml_dump {
                     $value->{tell} = tell(*{$_[0]});
                 }
             }
-            $ynode->{$type} = $value; 
+            $ynode->{$type} = $value;
         }
     }
     return $ynode;
@@ -114,7 +114,7 @@ sub yaml_load {
 #-------------------------------------------------------------------------------
 package YAML::Type::code;
 
-my $dummy_warned = 0; 
+my $dummy_warned = 0;
 my $default = '{ "DUMMY" }';
 
 sub yaml_dump {
@@ -146,7 +146,7 @@ sub yaml_dump {
     }
     $_[2] = $code;
     YAML::Node->new($_[2], $tag);
-}    
+}
 
 sub yaml_load {
     my $self = shift;
@@ -228,6 +228,8 @@ sub yaml_load {
 
 __END__
 
+=encoding UTF-8
+
 =head1 NAME
 
 YAML::Types - Marshall Perl internal data types to/from YAML
@@ -251,7 +253,7 @@ Ingy döt Net <ingy@cpan.org>
 
 =head1 COPYRIGHT
 
-Copyright (c) 2006, 2011-2012. Ingy döt Net. All rights reserved.
+Copyright (c) 2006, 2011-2013. Ingy döt Net. All rights reserved.
 
 This program is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.

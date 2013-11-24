@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package YAML::Tag;
 
-our $VERSION = '0.84';
+our $VERSION = '0.85';
 
 use overload '""' => sub { ${$_[0]} };
 
@@ -23,6 +23,8 @@ sub canonical {
 
 __END__
 
+=encoding UTF-8
+
 =head1 NAME
 
 YAML::Tag - Tag URI object class for YAML
@@ -41,7 +43,7 @@ Ingy döt Net <ingy@cpan.org>
 
 =head1 COPYRIGHT
 
-Copyright (c) 2006, 2011-2012. Ingy döt Net. All rights reserved.
+Copyright (c) 2006, 2011-2013. Ingy döt Net. All rights reserved.
 
 This program is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.

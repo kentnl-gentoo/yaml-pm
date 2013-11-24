@@ -2,7 +2,7 @@ use 5.008001;
 package YAML;
 use YAML::Mo;
 
-our $VERSION = '0.84';
+our $VERSION = '0.85';
 
 use Exporter;
 push @YAML::ISA, 'Exporter';
@@ -102,7 +102,7 @@ sub global_object { $global }
 
 __END__
 
-=encoding utf8
+=encoding UTF-8
 
 =head1 NAME
 
@@ -131,7 +131,7 @@ switched over to the new UI-only version.
 =head1 SYNOPSIS
 
     use YAML;
-    
+
     # Load a YAML stream of 3 YAML documents into Perl data structures.
     my ($hashref, $arrayref, $string) = Load(<<'...');
     ---
@@ -152,13 +152,13 @@ switched over to the new UI-only version.
     ain't! YAML is really a data serialization language. But if you want
     to think of it as a markup, that's OK with me. A lot of people try
     to use XML as a serialization format.
-    
+
     "YAML" is catchy and fun to say. Try it. "YAML, YAML, YAML!!!"
     ...
-    
+
     # Dump the Perl data structures back into YAML.
     print Dump($string, $arrayref, $hashref);
-    
+
     # YAML::Dump is used the same way you'd use Data::Dumper::Dumper
     use Data::Dumper;
     print Dumper($string, $arrayref, $hashref);
@@ -305,7 +305,7 @@ import list:
 =item Dump(list-of-Perl-data-structures)
 
 Turn Perl data into YAML. This function works very much like
-Data::Dumper::Dumper(). It takes a list of Perl data strucures and
+Data::Dumper::Dumper(). It takes a list of Perl data structures and
 dumps them into a serialized form. It returns a string containing the
 YAML stream. The structures can be references or plain scalars.
 
@@ -539,7 +539,7 @@ Compresses the formatting of arrays of hashes:
 
     -
       foo: bar
-    - 
+    -
       bar: foo
 
 becomes:
@@ -572,7 +572,7 @@ Perl's Glob or Python's tuple, or Ruby's Bigint.
 
 =item stream
 
-A YAML stream is the full sequence of unicode characters that a YAML
+A YAML stream is the full sequence of Unicode characters that a YAML
 parser would read or a YAML emitter would write. A stream may contain
 one or more YAML documents separated by YAML headers.
 
@@ -610,7 +610,7 @@ information.
 
 =item node
 
-A YAML node is the representation of a particular data stucture. Nodes
+A YAML node is the representation of a particular data structure. Nodes
 may contain other nodes. (In Perl terms, nodes are like scalars.
 Strings, arrayrefs and hashrefs. But this refers to the serialized
 format, not the in-memory structure.)
@@ -694,7 +694,7 @@ This is a multiline scalar which begins on the next line. It is
 indicated by a single right angle bracket. It is unescaped like the
 single quoted scalar. Line folding is also performed.
 
-    - > 
+    - >
      This is a multiline scalar which begins on
      the next line. It is indicated by a single
      carat. It is unescaped like the single
@@ -793,7 +793,7 @@ See YAML::XS. Fast!
 
 Ingy döt Net <ingy@cpan.org>
 
-is resonsible for YAML.pm.
+is responsible for YAML.pm.
 
 The YAML serialization language is the result of years of collaboration
 between Oren Ben-Kiki, Clark Evans and Ingy döt Net. Several others
@@ -801,7 +801,7 @@ have added help along the way.
 
 =head1 COPYRIGHT
 
-Copyright (c) 2005, 2006, 2008, 2011-2012. Ingy döt Net.
+Copyright (c) 2005, 2006, 2008, 2011-2013. Ingy döt Net.
 
 Copyright (c) 2001, 2002, 2005. Brian Ingerson.
 

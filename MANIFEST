@@ -52,6 +52,7 @@ t/dump-perl-types-512.t
 t/dump-perl-types-514.t
 t/dump-perl-types.t
 t/dump-stringify.t
+t/dump-synopsis.t
 t/dump-tests-512.t
 t/dump-tests-514.t
 t/dump-tests.t
@@ -73,6 +74,7 @@ t/node-info.t
 t/pugs-objects.t
 t/references.t
 t/regexp.t
+t/rt-90593.t
 t/svk-config.yaml
 t/svk.t
 t/test.t
