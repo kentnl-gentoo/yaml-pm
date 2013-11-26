@@ -18,10 +18,10 @@ sub _carp {
     return warn @_, " at $file line $line\n";
 }
 
-our $VERSION = '0.99';
+our $VERSION = '0.98';
 $VERSION = eval $VERSION;    ## no critic (BuiltinFunctions::ProhibitStringyEval)
 
-use Test::Builder::Module 0.99;
+use Test::Builder::Module;
 our @ISA    = qw(Test::Builder::Module);
 our @EXPORT = qw(ok use_ok require_ok
   is isnt like unlike is_deeply
@@ -38,7 +38,7 @@ our @EXPORT = qw(ok use_ok require_ok
   BAIL_OUT
 );
 
-#line 163
+#line 164
 
 sub plan {
     my $tb = Test::More->builder;
@@ -72,14 +72,14 @@ sub import_extra {
     return;
 }
 
-#line 216
+#line 217
 
 sub done_testing {
     my $tb = Test::More->builder;
     $tb->done_testing(@_);
 }
 
-#line 288
+#line 289
 
 sub ok ($;$) {
     my( $test, $name ) = @_;
@@ -88,7 +88,7 @@ sub ok ($;$) {
     return $tb->ok( $test, $name );
 }
 
-#line 371
+#line 372
 
 sub is ($$;$) {
     my $tb = Test::More->builder;
@@ -104,7 +104,7 @@ sub isnt ($$;$) {
 
 *isn't = \&isnt;
 
-#line 415
+#line 416
 
 sub like ($$;$) {
     my $tb = Test::More->builder;
@@ -112,7 +112,7 @@ sub like ($$;$) {
     return $tb->like(@_);
 }
 
-#line 430
+#line 431
 
 sub unlike ($$;$) {
     my $tb = Test::More->builder;
@@ -165,86 +165,64 @@ sub can_ok ($@) {
 #line 577
 
 sub isa_ok ($$;$) {
-    my( $thing, $class, $thing_name ) = @_;
+    my( $object, $class, $obj_name ) = @_;
     my $tb = Test::More->builder;
 
-    my $whatami;
-    if( !defined $thing ) {
-        $whatami = 'undef';
-    }
-    elsif( ref $thing ) {
-        $whatami = 'reference';
+    my $diag;
 
-        local($@,$!);
-        require Scalar::Util;
-        if( Scalar::Util::blessed($thing) ) {
-            $whatami = 'object';
-        }
+    if( !defined $object ) {
+        $obj_name = 'The thing' unless defined $obj_name;
+        $diag = "$obj_name isn't defined";
     }
     else {
-        $whatami = 'class';
-    }
-
-    # We can't use UNIVERSAL::isa because we want to honor isa() overrides
-    my( $rslt, $error ) = $tb->_try( sub { $thing->isa($class) } );
-
-    if($error) {
-        die <<WHOA unless $error =~ /^Can't (locate|call) method "isa"/;
+        my $whatami = ref $object ? 'object' : 'class';
+        # We can't use UNIVERSAL::isa because we want to honor isa() overrides
+        my( $rslt, $error ) = $tb->_try( sub { $object->isa($class) } );
+        if($error) {
+            if( $error =~ /^Can't call method "isa" on unblessed reference/ ) {
+                # Its an unblessed reference
+                $obj_name = 'The reference' unless defined $obj_name;
+                if( !UNIVERSAL::isa( $object, $class ) ) {
+                    my $ref = ref $object;
+                    $diag = "$obj_name isn't a '$class' it's a '$ref'";
+                }
+            }
+            elsif( $error =~ /Can't call method "isa" without a package/ ) {
+                # It's something that can't even be a class
+                $obj_name = 'The thing' unless defined $obj_name;
+                $diag = "$obj_name isn't a class or reference";
+            }
+            else {
+                die <<WHOA;
 WHOA! I tried to call ->isa on your $whatami and got some weird error.
 Here's the error.
 $error
 WHOA
+            }
+        }
+        else {
+            $obj_name = "The $whatami" unless defined $obj_name;
+            if( !$rslt ) {
+                my $ref = ref $object;
+                $diag = "$obj_name isn't a '$class' it's a '$ref'";
+            }
+        }
     }
 
-    # Special case for isa_ok( [], "ARRAY" ) and like
-    if( $whatami eq 'reference' ) {
-        $rslt = UNIVERSAL::isa($thing, $class);
-    }
-
-    my($diag, $name);
-    if( defined $thing_name ) {
-        $name = "'$thing_name' isa '$class'";
-        $diag = defined $thing ? "'$thing_name' isn't a '$class'" : "'$thing_name' isn't defined";
-    }
-    elsif( $whatami eq 'object' ) {
-        my $my_class = ref $thing;
-        $thing_name = qq[An object of class '$my_class'];
-        $name = "$thing_name isa '$class'";
-        $diag = "The object of class '$my_class' isn't a '$class'";
-    }
-    elsif( $whatami eq 'reference' ) {
-        my $type = ref $thing;
-        $thing_name = qq[A reference of type '$type'];
-        $name = "$thing_name isa '$class'";
-        $diag = "The reference of type '$type' isn't a '$class'";
-    }
-    elsif( $whatami eq 'undef' ) {
-        $thing_name = 'undef';
-        $name = "$thing_name isa '$class'";
-        $diag = "$thing_name isn't defined";
-    }
-    elsif( $whatami eq 'class' ) {
-        $thing_name = qq[The class (or class-like) '$thing'];
-        $name = "$thing_name isa '$class'";
-        $diag = "$thing_name isn't a '$class'";
-    }
-    else {
-        die;
-    }
-
+    my $name = "$obj_name isa $class";
     my $ok;
-    if($rslt) {
-        $ok = $tb->ok( 1, $name );
-    }
-    else {
+    if($diag) {
         $ok = $tb->ok( 0, $name );
         $tb->diag("    $diag\n");
+    }
+    else {
+        $ok = $tb->ok( 1, $name );
     }
 
     return $ok;
 }
 
-#line 678
+#line 656
 
 sub new_ok {
     my $tb = Test::More->builder;
@@ -253,6 +231,7 @@ sub new_ok {
     my( $class, $args, $object_name ) = @_;
 
     $args ||= [];
+    $object_name = "The object" unless defined $object_name;
 
     my $obj;
     my( $success, $error ) = $tb->_try( sub { $obj = $class->new(@$args); 1 } );
@@ -261,15 +240,14 @@ sub new_ok {
         isa_ok $obj, $class, $object_name;
     }
     else {
-        $class = 'undef' if !defined $class;
-        $tb->ok( 0, "$class->new() died" );
+        $tb->ok( 0, "new() died" );
         $tb->diag("    Error was:  $error");
     }
 
     return $obj;
 }
 
-#line 764
+#line 741
 
 sub subtest {
     my ($name, $subtests) = @_;
@@ -278,7 +256,7 @@ sub subtest {
     return $tb->subtest(@_);
 }
 
-#line 788
+#line 765
 
 sub pass (;$) {
     my $tb = Test::More->builder;
@@ -292,7 +270,69 @@ sub fail (;$) {
     return $tb->ok( 0, @_ );
 }
 
-#line 841
+#line 833
+
+sub use_ok ($;@) {
+    my( $module, @imports ) = @_;
+    @imports = () unless @imports;
+    my $tb = Test::More->builder;
+
+    my( $pack, $filename, $line ) = caller;
+
+    my $code;
+    if( @imports == 1 and $imports[0] =~ /^\d+(?:\.\d+)?$/ ) {
+        # probably a version check.  Perl needs to see the bare number
+        # for it to work with non-Exporter based modules.
+        $code = <<USE;
+package $pack;
+use $module $imports[0];
+1;
+USE
+    }
+    else {
+        $code = <<USE;
+package $pack;
+use $module \@{\$args[0]};
+1;
+USE
+    }
+
+    my( $eval_result, $eval_error ) = _eval( $code, \@imports );
+    my $ok = $tb->ok( $eval_result, "use $module;" );
+
+    unless($ok) {
+        chomp $eval_error;
+        $@ =~ s{^BEGIN failed--compilation aborted at .*$}
+                {BEGIN failed--compilation aborted at $filename line $line.}m;
+        $tb->diag(<<DIAGNOSTIC);
+    Tried to use '$module'.
+    Error:  $eval_error
+DIAGNOSTIC
+
+    }
+
+    return $ok;
+}
+
+sub _eval {
+    my( $code, @args ) = @_;
+
+    # Work around oddities surrounding resetting of $@ by immediately
+    # storing it.
+    my( $sigdie, $eval_result, $eval_error );
+    {
+        local( $@, $!, $SIG{__DIE__} );    # isolate eval
+        $eval_result = eval $code;              ## no critic (BuiltinFunctions::ProhibitStringyEval)
+        $eval_error  = $@;
+        $sigdie      = $SIG{__DIE__} || undef;
+    }
+    # make sure that $code got a chance to set $SIG{__DIE__}
+    $SIG{__DIE__} = $sigdie if defined $sigdie;
+
+    return( $eval_result, $eval_error );
+}
+
+#line 902
 
 sub require_ok ($) {
     my($module) = shift;
@@ -336,76 +376,7 @@ sub _is_module_name {
     return $module =~ /^[a-zA-Z]\w*$/ ? 1 : 0;
 }
 
-
-#line 935
-
-sub use_ok ($;@) {
-    my( $module, @imports ) = @_;
-    @imports = () unless @imports;
-    my $tb = Test::More->builder;
-
-    my( $pack, $filename, $line ) = caller;
-    $filename =~ y/\n\r/_/; # so it doesn't run off the "#line $line $f" line
-
-    my $code;
-    if( @imports == 1 and $imports[0] =~ /^\d+(?:\.\d+)?$/ ) {
-        # probably a version check.  Perl needs to see the bare number
-        # for it to work with non-Exporter based modules.
-        $code = <<USE;
-package $pack;
-
-#line $line $filename
-use $module $imports[0];
-1;
-USE
-    }
-    else {
-        $code = <<USE;
-package $pack;
-
-#line $line $filename
-use $module \@{\$args[0]};
-1;
-USE
-    }
-
-    my( $eval_result, $eval_error ) = _eval( $code, \@imports );
-    my $ok = $tb->ok( $eval_result, "use $module;" );
-
-    unless($ok) {
-        chomp $eval_error;
-        $@ =~ s{^BEGIN failed--compilation aborted at .*$}
-                {BEGIN failed--compilation aborted at $filename line $line.}m;
-        $tb->diag(<<DIAGNOSTIC);
-    Tried to use '$module'.
-    Error:  $eval_error
-DIAGNOSTIC
-
-    }
-
-    return $ok;
-}
-
-sub _eval {
-    my( $code, @args ) = @_;
-
-    # Work around oddities surrounding resetting of $@ by immediately
-    # storing it.
-    my( $sigdie, $eval_result, $eval_error );
-    {
-        local( $@, $!, $SIG{__DIE__} );    # isolate eval
-        $eval_result = eval $code;              ## no critic (BuiltinFunctions::ProhibitStringyEval)
-        $eval_error  = $@;
-        $sigdie      = $SIG{__DIE__} || undef;
-    }
-    # make sure that $code got a chance to set $SIG{__DIE__}
-    $SIG{__DIE__} = $sigdie if defined $sigdie;
-
-    return( $eval_result, $eval_error );
-}
-
-
-#line 1036
+#line 979
 
 our( @Data_Stack, %Refs_Seen );
 my $DNE = bless [], 'Does::Not::Exist';
@@ -512,7 +483,7 @@ sub _type {
     return '';
 }
 
-#line 1196
+#line 1139
 
 sub diag {
     return Test::More->builder->diag(@_);
@@ -522,13 +493,13 @@ sub note {
     return Test::More->builder->note(@_);
 }
 
-#line 1222
+#line 1165
 
 sub explain {
     return Test::More->builder->explain(@_);
 }
 
-#line 1288
+#line 1231
 
 ## no critic (Subroutines::RequireFinalReturn)
 sub skip {
@@ -556,7 +527,7 @@ sub skip {
     last SKIP;
 }
 
-#line 1372
+#line 1315
 
 sub todo_skip {
     my( $why, $how_many ) = @_;
@@ -577,7 +548,7 @@ sub todo_skip {
     last TODO;
 }
 
-#line 1427
+#line 1370
 
 sub BAIL_OUT {
     my $reason = shift;
@@ -586,7 +557,7 @@ sub BAIL_OUT {
     $tb->BAIL_OUT($reason);
 }
 
-#line 1466
+#line 1409
 
 #'#
 sub eq_array {
@@ -726,7 +697,7 @@ WHOA
     }
 }
 
-#line 1613
+#line 1556
 
 sub eq_hash {
     local @Data_Stack = ();
@@ -761,7 +732,7 @@ sub _eq_hash {
     return $ok;
 }
 
-#line 1672
+#line 1615
 
 sub eq_set {
     my( $a1, $a2 ) = @_;
@@ -786,6 +757,6 @@ sub eq_set {
     );
 }
 
-#line 1911
+#line 1817
 
 1;
