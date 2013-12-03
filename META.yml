@@ -27,4 +27,4 @@ resources:
   homepage: https://github.com/ingydotnet/yaml-pm
   license: http://dev.perl.org/licenses/
   repository: git://github.com/ingydotnet/yaml-pm
-version: 0.87
+version: 0.88
