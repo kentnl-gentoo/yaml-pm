@@ -1,4 +1,5 @@
 use utf8;
+use lib 'inc';
 use Test::YAML();
 BEGIN {
     @Test::YAML::EXPORT =
@@ -14,7 +15,7 @@ ok defined &DumpFile,
 ok defined &LoadFile,
     'LoadFile exported';
 
-my $file = 't/dump.yaml';
+my $file = "t/dump-file-utf8-$$.yaml";
 
 # A scalar containing non-ASCII characters
 my $data = 'Olivier Mengué';

@@ -1,9 +1,6 @@
-use strict;
-use warnings;
+use strict; use warnings;
 package YAML::Node;
-
-our $VERSION = '0.88';
-
+$YAML::Node::VERSION = '0.89';
 use YAML::Tag;
 require YAML::Mo;
 
@@ -71,7 +68,7 @@ sub keys {
 
 #==============================================================================
 package yaml_scalar;
-
+$yaml_scalar::VERSION = '0.89';
 @yaml_scalar::ISA = qw(YAML::Node);
 
 sub new {
@@ -97,7 +94,7 @@ sub STORE {
 
 #==============================================================================
 package yaml_sequence;
-
+$yaml_sequence::VERSION = '0.89';
 @yaml_sequence::ISA = qw(YAML::Node);
 
 sub new {
@@ -137,6 +134,7 @@ sub undone {
 
 #==============================================================================
 package yaml_mapping;
+$yaml_mapping::VERSION = '0.89';
 
 @yaml_mapping::ISA = qw(YAML::Node);
 
@@ -220,8 +218,6 @@ sub EXISTS {
 
 1;
 
-__END__
-
 =encoding UTF-8
 
 =head1 NAME
@@ -299,7 +295,7 @@ Ingy döt Net <ingy@cpan.org>
 
 =head1 COPYRIGHT
 
-Copyright (c) 2006, 2011-2013. Ingy döt Net. All rights reserved.
+Copyright (c) 2006, 2011-2014. Ingy döt Net. All rights reserved.
 
 Copyright (c) 2002. Brian Ingerson. All rights reserved.
 

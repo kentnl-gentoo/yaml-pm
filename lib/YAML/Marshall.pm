@@ -1,9 +1,6 @@
-use strict;
-use warnings;
+use strict; use warnings;
 package YAML::Marshall;
-
-our $VERSION = '0.88';
-
+$YAML::Marshall::VERSION = '0.89';
 use YAML::Node ();
 
 sub import {
@@ -49,8 +46,6 @@ sub yaml_ynode {
 
 1;
 
-__END__
-
 =encoding UTF-8
 
 =head1 NAME
@@ -73,7 +68,7 @@ Ingy döt Net <ingy@cpan.org>
 
 =head1 COPYRIGHT
 
-Copyright (c) 2006, 2011-2013. Ingy döt Net. All rights reserved.
+Copyright (c) 2006, 2011-2014. Ingy döt Net. All rights reserved.
 
 This program is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.

@@ -1,5 +1,6 @@
 package t::TestYAML;
-use Test::YAML 0.51 -Base;
+use lib 'inc';
+use Test::YAML -Base;
 
 $Test::YAML::YAML = 'YAML';
 
