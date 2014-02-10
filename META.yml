@@ -18,4 +18,4 @@ resources:
   bugtracker: https://github.com/ingydotnet/yaml-pm/issues
   homepage: https://github.com/ingydotnet/yaml-pm
   repository: https://github.com/ingydotnet/yaml-pm.git
-version: '0.89'
+version: '0.90'

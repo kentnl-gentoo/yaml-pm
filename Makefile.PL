@@ -22,7 +22,7 @@ my %WriteMakefileArgs = (
   "NAME" => "YAML",
   "PREREQ_PM" => {},
   "TEST_REQUIRES" => {},
-  "VERSION" => "0.89",
+  "VERSION" => "0.90",
   "test" => {
     "TESTS" => "t/*.t"
   }

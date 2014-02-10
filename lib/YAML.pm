@@ -1,6 +1,6 @@
 use 5.008001;
 package YAML;
-$YAML::VERSION = '0.89';
+$YAML::VERSION = '0.90';
 use YAML::Mo;
 
 use Exporter;

@@ -1,5 +1,5 @@
 package YAML::Loader;
-$YAML::Loader::VERSION = '0.89';
+$YAML::Loader::VERSION = '0.90';
 use YAML::Mo;
 extends 'YAML::Loader::Base';
 
