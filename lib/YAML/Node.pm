@@ -1,6 +1,6 @@
 use strict; use warnings;
 package YAML::Node;
-$YAML::Node::VERSION = '0.90';
+$YAML::Node::VERSION = '0.91';
 use YAML::Tag;
 require YAML::Mo;
 
@@ -68,7 +68,7 @@ sub keys {
 
 #==============================================================================
 package yaml_scalar;
-$yaml_scalar::VERSION = '0.90';
+$yaml_scalar::VERSION = '0.91';
 @yaml_scalar::ISA = qw(YAML::Node);
 
 sub new {
@@ -94,7 +94,7 @@ sub STORE {
 
 #==============================================================================
 package yaml_sequence;
-$yaml_sequence::VERSION = '0.90';
+$yaml_sequence::VERSION = '0.91';
 @yaml_sequence::ISA = qw(YAML::Node);
 
 sub new {
@@ -134,7 +134,7 @@ sub undone {
 
 #==============================================================================
 package yaml_mapping;
-$yaml_mapping::VERSION = '0.90';
+$yaml_mapping::VERSION = '0.91';
 
 @yaml_mapping::ISA = qw(YAML::Node);
 

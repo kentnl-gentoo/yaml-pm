@@ -1,5 +1,5 @@
 package YAML::Dumper;
-$YAML::Dumper::VERSION = '0.90';
+$YAML::Dumper::VERSION = '0.91';
 use YAML::Mo;
 extends 'YAML::Dumper::Base';
 
@@ -485,6 +485,7 @@ sub is_valid_plain {
     return 0 if $_[0] =~ /\s#/;
     return 0 if $_[0] =~ /\:(\s|$)/;
     return 0 if $_[0] =~ /[\s\|\>]$/;
+    return 0 if $_[0] eq '-';
     return 1;
 }
 

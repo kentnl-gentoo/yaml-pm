@@ -1,6 +1,6 @@
 use strict; use warnings;
 package YAML::Marshall;
-$YAML::Marshall::VERSION = '0.90';
+$YAML::Marshall::VERSION = '0.91';
 use YAML::Node ();
 
 sub import {

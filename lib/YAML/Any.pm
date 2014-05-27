@@ -1,5 +1,5 @@
 package YAML::Any;
-$YAML::Any::VERSION = '0.90';
+$YAML::Any::VERSION = '0.91';
 use strict;
 use Exporter ();
 

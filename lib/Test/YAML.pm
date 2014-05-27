@@ -1,5 +1,5 @@
 package Test::YAML;
-$Test::YAML::VERSION = '0.90';
+$Test::YAML::VERSION = '0.91';
 use Test::Base -Base;
 use lib 'lib';
 
@@ -174,7 +174,7 @@ sub _skip_test() {
 
 #-------------------------------------------------------------------------------
 package Test::YAML::Filter;
-$Test::YAML::Filter::VERSION = '0.90';
+$Test::YAML::Filter::VERSION = '0.91';
 use Test::Base::Filter ();
 
 our @ISA = 'Test::Base::Filter';
