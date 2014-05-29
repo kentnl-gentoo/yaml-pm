@@ -1,5 +1,5 @@
 package YAML::Error;
-$YAML::Error::VERSION = '0.91';
+$YAML::Error::VERSION = '0.92';
 use YAML::Mo;
 
 has 'code';
@@ -185,7 +185,7 @@ YAML_LOAD_WARN_GLOB_IO
     );
 
 package YAML::Warning;
-$YAML::Warning::VERSION = '0.91';
+$YAML::Warning::VERSION = '0.92';
 our @ISA = 'YAML::Error';
 
 1;

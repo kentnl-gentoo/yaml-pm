@@ -1,6 +1,6 @@
 use strict; use warnings;
 package YAML::Tag;
-$YAML::Tag::VERSION = '0.91';
+$YAML::Tag::VERSION = '0.92';
 use overload '""' => sub { ${$_[0]} };
 
 sub new {

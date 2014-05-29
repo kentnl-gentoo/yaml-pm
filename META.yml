@@ -12,10 +12,15 @@ meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: '1.4'
 name: YAML
+no_index:
+  directory:
+    - inc
+    - t
+    - xt
 requires:
   perl: v5.8.1
 resources:
   bugtracker: https://github.com/ingydotnet/yaml-pm/issues
   homepage: https://github.com/ingydotnet/yaml-pm
   repository: https://github.com/ingydotnet/yaml-pm.git
-version: '0.91'
+version: '0.92'

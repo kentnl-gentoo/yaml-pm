@@ -1,5 +1,5 @@
 package YAML::Types;
-$YAML::Types::VERSION = '0.91';
+$YAML::Types::VERSION = '0.92';
 use YAML::Mo;
 use YAML::Node;
 
@@ -7,7 +7,7 @@ use YAML::Node;
 # but at least they work for now.
 #-------------------------------------------------------------------------------
 package YAML::Type::blessed;
-$YAML::Type::blessed::VERSION = '0.91';
+$YAML::Type::blessed::VERSION = '0.92';
 use YAML::Mo; # XXX
 
 sub yaml_dump {
@@ -33,7 +33,7 @@ sub yaml_dump {
 
 #-------------------------------------------------------------------------------
 package YAML::Type::undef;
-$YAML::Type::undef::VERSION = '0.91';
+$YAML::Type::undef::VERSION = '0.92';
 sub yaml_dump {
     my $self = shift;
 }
@@ -44,7 +44,7 @@ sub yaml_load {
 
 #-------------------------------------------------------------------------------
 package YAML::Type::glob;
-$YAML::Type::glob::VERSION = '0.91';
+$YAML::Type::glob::VERSION = '0.92';
 sub yaml_dump {
     my $self = shift;
     my $ynode = YAML::Node->new({}, '!perl/glob:');
@@ -112,7 +112,7 @@ sub yaml_load {
 
 #-------------------------------------------------------------------------------
 package YAML::Type::code;
-$YAML::Type::code::VERSION = '0.91';
+$YAML::Type::code::VERSION = '0.92';
 my $dummy_warned = 0;
 my $default = '{ "DUMMY" }';
 
@@ -169,7 +169,7 @@ sub yaml_load {
 
 #-------------------------------------------------------------------------------
 package YAML::Type::ref;
-$YAML::Type::ref::VERSION = '0.91';
+$YAML::Type::ref::VERSION = '0.92';
 sub yaml_dump {
     my $self = shift;
     YAML::Node->new({(&YAML::VALUE, ${$_[0]})}, '!perl/ref')
@@ -185,7 +185,7 @@ sub yaml_load {
 
 #-------------------------------------------------------------------------------
 package YAML::Type::regexp;
-$YAML::Type::regexp::VERSION = '0.91';
+$YAML::Type::regexp::VERSION = '0.92';
 # XXX Be sure to handle blessed regexps (if possible)
 sub yaml_dump {
     die "YAML::Type::regexp::yaml_dump not currently implemented";
