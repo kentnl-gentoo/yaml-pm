@@ -1,5 +1,5 @@
 package YAML::Types;
-$YAML::Types::VERSION = '0.93';
+$YAML::Types::VERSION = '0.94';
 use YAML::Mo;
 use YAML::Node;
 
@@ -7,7 +7,7 @@ use YAML::Node;
 # but at least they work for now.
 #-------------------------------------------------------------------------------
 package YAML::Type::blessed;
-$YAML::Type::blessed::VERSION = '0.93';
+$YAML::Type::blessed::VERSION = '0.94';
 use YAML::Mo; # XXX
 
 sub yaml_dump {
@@ -33,7 +33,7 @@ sub yaml_dump {
 
 #-------------------------------------------------------------------------------
 package YAML::Type::undef;
-$YAML::Type::undef::VERSION = '0.93';
+$YAML::Type::undef::VERSION = '0.94';
 sub yaml_dump {
     my $self = shift;
 }
@@ -44,7 +44,7 @@ sub yaml_load {
 
 #-------------------------------------------------------------------------------
 package YAML::Type::glob;
-$YAML::Type::glob::VERSION = '0.93';
+$YAML::Type::glob::VERSION = '0.94';
 sub yaml_dump {
     my $self = shift;
     my $ynode = YAML::Node->new({}, '!perl/glob:');
@@ -112,7 +112,7 @@ sub yaml_load {
 
 #-------------------------------------------------------------------------------
 package YAML::Type::code;
-$YAML::Type::code::VERSION = '0.93';
+$YAML::Type::code::VERSION = '0.94';
 my $dummy_warned = 0;
 my $default = '{ "DUMMY" }';
 
@@ -169,7 +169,7 @@ sub yaml_load {
 
 #-------------------------------------------------------------------------------
 package YAML::Type::ref;
-$YAML::Type::ref::VERSION = '0.93';
+$YAML::Type::ref::VERSION = '0.94';
 sub yaml_dump {
     my $self = shift;
     YAML::Node->new({(&YAML::VALUE, ${$_[0]})}, '!perl/ref')
@@ -185,7 +185,7 @@ sub yaml_load {
 
 #-------------------------------------------------------------------------------
 package YAML::Type::regexp;
-$YAML::Type::regexp::VERSION = '0.93';
+$YAML::Type::regexp::VERSION = '0.94';
 # XXX Be sure to handle blessed regexps (if possible)
 sub yaml_dump {
     die "YAML::Type::regexp::yaml_dump not currently implemented";
@@ -224,37 +224,3 @@ sub yaml_load {
 }
 
 1;
-
-=encoding UTF-8
-
-=head1 NAME
-
-YAML::Types - Marshall Perl internal data types to/from YAML
-
-=head1 SYNOPSIS
-
-    $::foo = 42;
-    print YAML::Dump(*::foo);
-
-    print YAML::Dump(qr{match me});
-
-=head1 DESCRIPTION
-
-This module has the helper classes for transferring objects,
-subroutines, references, globs, regexps and file handles to and
-from YAML.
-
-=head1 AUTHOR
-
-Ingy döt Net <ingy@cpan.org>
-
-=head1 COPYRIGHT
-
-Copyright (c) 2006, 2011-2014. Ingy döt Net. All rights reserved.
-
-This program is free software; you can redistribute it and/or modify it
-under the same terms as Perl itself.
-
-See L<http://www.perl.com/perl/misc/Artistic.html>
-
-=cut
