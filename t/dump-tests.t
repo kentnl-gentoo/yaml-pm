@@ -1,4 +1,8 @@
-use t::TestYAML tests => 57;
+use strict;
+use File::Basename;
+use lib dirname(__FILE__);
+
+use TestYAML tests => 57;
 
 no_diff();
 run_roundtrip_nyn('dumper');

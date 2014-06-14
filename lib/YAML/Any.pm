@@ -1,5 +1,5 @@
 package YAML::Any;
-$YAML::Any::VERSION = '0.92';
+$YAML::Any::VERSION = '0.93';
 use strict;
 use Exporter ();
 
@@ -111,7 +111,7 @@ sub implementation {
 
 sub croak {
     require Carp;
-    Carp::Croak(@_);
+    Carp::croak(@_);
 }
 
 1;

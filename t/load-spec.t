@@ -1,4 +1,8 @@
-use t::TestYAML tests => 52;
+use strict;
+use File::Basename;
+use lib dirname(__FILE__);
+
+use TestYAML tests => 52;
 
 run_load_passes();
 

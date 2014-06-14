@@ -1,3 +1,9 @@
+use strict;
+use File::Basename;
+use lib dirname(__FILE__);
+
+my $testdir = -e 'test' ? 'test' : 't';
+
 use utf8;
 use lib 'inc';
 use Test::YAML();
@@ -5,7 +11,7 @@ BEGIN {
     @Test::YAML::EXPORT =
         grep { not /^(Dump|Load)(File)?$/ } @Test::YAML::EXPORT;
 }
-use t::TestYAML tests => 6;
+use TestYAML tests => 6;
 
 use YAML qw/DumpFile LoadFile/;
 
@@ -15,7 +21,7 @@ ok defined &DumpFile,
 ok defined &LoadFile,
     'LoadFile exported';
 
-my $file = "t/dump-file-utf8-$$.yaml";
+my $file = "$testdir/dump-file-utf8-$$.yaml";
 
 # A scalar containing non-ASCII characters
 my $data = 'Olivier Mengué';

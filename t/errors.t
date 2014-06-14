@@ -1,4 +1,8 @@
-use t::TestYAML tests => 35;
+use strict;
+use File::Basename;
+use lib dirname(__FILE__);
+
+use TestYAML tests => 35;
 $^W = 1;
 
 use YAML::Error;

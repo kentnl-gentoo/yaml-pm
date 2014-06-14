@@ -1,17 +1,23 @@
+use strict;
+use File::Basename;
+use lib dirname(__FILE__);
+
+my $testdir = -e 'test' ? 'test' : 't';
+
 use lib 'inc';
 use Test::YAML();
 BEGIN {
     @Test::YAML::EXPORT =
         grep { not /^(Dump|Load)(File)?$/ } @Test::YAML::EXPORT;
 }
-use t::TestYAML tests => 3;
+use TestYAML tests => 3;
 
 use YAML 'DumpFile';
 
 ok defined &DumpFile,
     'Dumpfile exported';
 
-my $file = "t/dump-file-$$.yaml";
+my $file = "$testdir/dump-file-$$.yaml";
 
 DumpFile($file, [1..3]);
 

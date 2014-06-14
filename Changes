@@ -1,3 +1,9 @@
+0.93 Fri Jun 13 22:32:18 PDT 2014
+ - Switch to Zilla::Dist
+ - Add badges to doc
+ - @thorsteneckel++ fixed #18
+ - @karenetheridge++ fixed #19
+
 0.92 Wed May 28 23:04:26 EDT 2014
  - https://github.com/ingydotnet/yaml-pm/pull/23
 

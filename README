@@ -1,5 +1,5 @@
 NAME
-    YAML - YAML Ain't Markup Language (tm)
+    YAML - YAML Ain't Markup Language™
 
 NOTE
     This module has been released to CPAN as YAML::Old, and soon YAML.pm
@@ -13,9 +13,6 @@ NOTE
 
     If you really need to use this version of YAML.pm it will always be
     available as YAML::Old.
-
-    If you don't care which YAML module use, as long as it's the best one
-    installed on your system, use YAML::Any.
 
     The rest of this documentation is left unchanged, until YAML.pm is
     switched over to the new UI-only version.
@@ -31,9 +28,9 @@ SYNOPSIS
         weight: heavy
         # I should comment that I also like pink, but don't tell anybody.
         favorite colors:
-            - red
-            - green
-            - blue
+          - red
+          - green
+          - blue
         ---
         - Clark Evans
         - Oren Ben-Kiki
@@ -374,9 +371,9 @@ GLOBAL OPTIONS
         allow you to do this. This also may result in faster processing
         because the lookup overhead is by bypassed.
 
-        THIS OPTION CAN BE DANGEROUS. *If* your data is recursive, this
-        option *will* cause Dump() to run in an endless loop, chewing up
-        your computers memory. You have been warned.
+        THIS OPTION CAN BE DANGEROUS. If your data is recursive, this option
+        will cause Dump() to run in an endless loop, chewing up your
+        computers memory. You have been warned.
 
     CompressSeries
         Default is 1.
@@ -412,9 +409,9 @@ YAML TERMINOLOGY
     Perl's Glob or Python's tuple, or Ruby's Bigint.
 
     stream
-        A YAML stream is the full sequence of Unicode characters that a YAML
-        parser would read or a YAML emitter would write. A stream may
-        contain one or more YAML documents separated by YAML headers.
+            A YAML stream is the full sequence of Unicode characters that a YAML
+            parser would read or a YAML emitter would write. A stream may contain
+            one or more YAML documents separated by YAML headers.
 
             ---
             a: mapping
@@ -450,7 +447,7 @@ YAML TERMINOLOGY
         A YAML node is the representation of a particular data structure.
         Nodes may contain other nodes. (In Perl terms, nodes are like
         scalars. Strings, arrayrefs and hashrefs. But this refers to the
-        serialized format, not the in-memory structure.)
+        serialized format, not the in- memory structure.)
 
     tag This is similar to a type. It indicates how a particular YAML node
         serialization should be transferred into or out of memory. For
@@ -562,14 +559,14 @@ YAML TERMINOLOGY
         The emitter takes info from the dumper and turns it into a YAML
         stream.
 
-        NOTE: In YAML.pm the parser/loader and the dumper/emitter code are
+        NOTE: In YAML.pm the parser*loader and the dumper*emitter code are
         currently very closely tied together. In the future they may be
         broken into separate stages.
 
     For more information please refer to the immensely helpful YAML
     specification available at <http://www.yaml.org/spec/>.
 
-ysh - The YAML Shell
+YSH - THE YAML SHELL
     The YAML distribution ships with a script called 'ysh', the YAML shell.
     ysh provides a simple, interactive way to play with YAML. If you type in
     Perl code, it displays the result in YAML. If you type in YAML it turns
@@ -587,7 +584,7 @@ BUGS & DEFICIENCIES
     with logging turned on ('ysh -L'). When you have successfully reproduced
     the bug, please mail the LOG file to the author (ingy@cpan.org).
 
-    WARNING: This is still *ALPHA* code. Well, most of this code has been
+    WARNING: This is still ALPHA code. Well, most of this code has been
     around for years...
 
     BIGGER WARNING: YAML.pm has been slow in the making, but I am committed

@@ -1,5 +1,5 @@
 ---
-abstract: "YAML Ain't Markup Language (tm)"
+abstract: "YAML Ain't Markup Language"
 author:
   - 'Ingy döt Net <ingy@cpan.org>'
 build_requires: {}
@@ -23,4 +23,4 @@ resources:
   bugtracker: https://github.com/ingydotnet/yaml-pm/issues
   homepage: https://github.com/ingydotnet/yaml-pm
   repository: https://github.com/ingydotnet/yaml-pm.git
-version: '0.92'
+version: '0.93'

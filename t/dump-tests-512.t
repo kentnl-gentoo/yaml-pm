@@ -1,10 +1,14 @@
+use strict;
+use File::Basename;
+use lib dirname(__FILE__);
+
 use Test::More;
 BEGIN {
   if ( qr/x/ =~ /\(\?\^/ ){
     plan skip_all => "test only for perls before v5.13.5-11-gfb85c04";
   }
 }
-use t::TestYAML tests => 1;
+use TestYAML tests => 1;
 
 no_diff();
 run_roundtrip_nyn('dumper');

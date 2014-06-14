@@ -1,4 +1,8 @@
-use t::TestYAML tests => 7;
+use strict;
+use File::Basename;
+use lib dirname(__FILE__);
+
+use TestYAML tests => 7;
 
 filters {
     perl => [qw'eval yaml_dump'],

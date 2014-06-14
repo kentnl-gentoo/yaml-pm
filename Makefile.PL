@@ -10,7 +10,7 @@ use ExtUtils::MakeMaker 6.30;
 
 
 my %WriteMakefileArgs = (
-  "ABSTRACT" => "YAML Ain't Markup Language (tm)",
+  "ABSTRACT" => "YAML Ain't Markup Language",
   "AUTHOR" => "Ingy d\x{f6}t Net <ingy\@cpan.org>",
   "CONFIGURE_REQUIRES" => {
     "ExtUtils::MakeMaker" => "6.30"
@@ -20,9 +20,9 @@ my %WriteMakefileArgs = (
   "LICENSE" => "perl",
   "NAME" => "YAML",
   "PREREQ_PM" => {},
-  "VERSION" => "0.92",
+  "VERSION" => "0.93",
   "test" => {
-    "TESTS" => "t/*.t"
+    "TESTS" => "t/*.t t/extra/*.t"
   }
 );
 

@@ -1,5 +1,5 @@
 package YAML::Dumper;
-$YAML::Dumper::VERSION = '0.92';
+$YAML::Dumper::VERSION = '0.93';
 use YAML::Mo;
 extends 'YAML::Dumper::Base';
 

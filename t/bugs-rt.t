@@ -1,4 +1,8 @@
-use t::TestYAML tests => 41;
+use strict;
+use File::Basename;
+use lib dirname(__FILE__);
+
+use TestYAML tests => 41;
 
 run_yaml_tests;
 

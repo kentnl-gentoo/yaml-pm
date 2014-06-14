@@ -1,5 +1,9 @@
+use strict;
+use File::Basename;
+use lib dirname(__FILE__);
+
 # This tests the slides I used for YAPC 2002
-use t::TestYAML tests => 28;
+use TestYAML tests => 28;
 
 run_load_passes();
 

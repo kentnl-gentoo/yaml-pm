@@ -1,10 +1,14 @@
+use strict;
+use File::Basename;
+use lib dirname(__FILE__);
+
 use lib 'inc';
 use Test::YAML();
 BEGIN {
     @Test::YAML::EXPORT =
         grep { not /^(Dump|Load)(File)?$/ } @Test::YAML::EXPORT;
 }
-use t::TestYAML tests => 9;
+use TestYAML tests => 9;
 
 use YAML qw(Dump Load freeze thaw);
 

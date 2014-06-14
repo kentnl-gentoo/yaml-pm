@@ -1,5 +1,9 @@
+use strict;
+use File::Basename;
+use lib dirname(__FILE__);
+
 # This simply tests that a given piece of invalid YAML fails to parse
-use t::TestYAML tests => 4;
+use TestYAML tests => 4;
 
 filters {
     msg => 'regexp',

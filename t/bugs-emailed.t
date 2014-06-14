@@ -1,4 +1,8 @@
-use t::TestYAML tests => 25;
+use strict;
+use File::Basename;
+use lib dirname(__FILE__);
+
+use TestYAML tests => 25;
 
 no_diff;
 run_yaml_tests;

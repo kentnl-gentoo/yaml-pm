@@ -1,4 +1,8 @@
-use t::TestYAML tests => 3;
+use strict;
+use File::Basename;
+use lib dirname(__FILE__);
+
+use TestYAML tests => 3;
 
 SKIP: {
     skip 'fix this next release', 3;

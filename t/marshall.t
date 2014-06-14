@@ -1,4 +1,8 @@
-use t::TestYAML tests => 10;
+use strict;
+use File::Basename;
+use lib dirname(__FILE__);
+
+use TestYAML tests => 10;
 
 use strict;
 use warnings;
@@ -6,8 +10,8 @@ use warnings;
 #-------------------------------------------------------------------------------
 package Foo::Bar;
 BEGIN {
-	require t::Base;
-	@Foo::Bar::ISA = 't::Base';
+	require TestYAMLBase;
+	@Foo::Bar::ISA = 'TestYAMLBase';
 }
 use YAML::Marshall;
 
@@ -31,16 +35,16 @@ sub yaml_load {
 #-------------------------------------------------------------------------------
 package Bar::Baz;
 BEGIN {
-	require t::Base;
-	@Bar::Baz::ISA = 't::Base';
+	require TestYAMLBase;
+	@Bar::Baz::ISA = 'TestYAMLBase';
 }
 use YAML::Marshall 'random/object:bar.baz';
 
 #-------------------------------------------------------------------------------
 package Baz::Foo;
 BEGIN {
-	require t::Base;
-	@Bar::Foo::ISA = 't::Base';
+	require TestYAMLBase;
+	@Bar::Foo::ISA = 'TestYAMLBase';
 }
 use YAML::Marshall;
 
