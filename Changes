@@ -1,3 +1,6 @@
+0.95 Sat Jun 14 10:32:08 PDT 2014
+ - Fix dumping blessed globs.
+
 0.94 Sat Jun 14 10:32:08 PDT 2014
  - Skip a failing test on 5.8 introduced in 0.93
 

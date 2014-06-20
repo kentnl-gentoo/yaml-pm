@@ -2,6 +2,7 @@
 Changes
 LICENSE
 MANIFEST
+META.json
 META.yml
 Makefile.PL
 README
@@ -40,6 +41,7 @@ t/bugs-emailed.t
 t/bugs-rt.t
 t/changes.t
 t/dump-basics.t
+t/dump-blessed-glob.t
 t/dump-blessed.t
 t/dump-code.t
 t/dump-file-utf8.t
