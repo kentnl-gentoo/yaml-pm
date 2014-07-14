@@ -36,6 +36,11 @@
          "requires" : {
             "perl" : "v5.8.1"
          }
+      },
+      "test" : {
+         "requires" : {
+            "Spiffy" : "0"
+         }
       }
    },
    "release_status" : "stable",
@@ -50,6 +55,6 @@
          "web" : "https://github.com/ingydotnet/yaml-pm"
       }
    },
-   "version" : "0.95"
+   "version" : "0.96"
 }
 

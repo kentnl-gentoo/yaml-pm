@@ -1,3 +1,7 @@
+0.96 Sun Jul 13 22:54:08 PDT 2014
+ - Fix Metadata and add Contributing file
+ - Change Kwim to Swim
+
 0.95 Sat Jun 14 10:32:08 PDT 2014
  - Fix dumping blessed globs.
 
