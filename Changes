@@ -1,3 +1,7 @@
+0.98 Wed Jul 30 12:32:25 PDT 2014
+ - Fix indexing of YAML::Any
+ - Change IRC to irc.perl.org#yaml
+
 0.97 Wed Jul 16 23:37:04 PDT 2014
  - Move remaining docs to Swim
 
