@@ -99,11 +99,11 @@ implementation is found, an error will be thrown.
 
 =head1 AUTHOR
 
-Ingy dÃ¶t Net <ingy@cpan.org>
+Ingy döt Net <ingy@cpan.org>
 
 =head1 COPYRIGHT
 
-Copyright 2001-2014. Ingy dÃ¶t Net
+Copyright 2001-2014. Ingy döt Net
 
 This program is free software; you can redistribute it and/or modify it under
 the same terms as Perl itself.

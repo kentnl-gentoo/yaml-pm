@@ -1,3 +1,6 @@
+1.00 Thu Aug  7 00:35:21 PDT 2014
+ - Fix bad encoding in Pod
+
 0.99 Wed Aug  6 17:55:42 PDT 2014
  - Switch to external Test::Base
 
