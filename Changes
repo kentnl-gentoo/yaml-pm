@@ -1,3 +1,6 @@
+1.01 Thu Aug  7 14:48:24 PDT 2014
+ - Dep on patched Test::YAML
+
 1.00 Thu Aug  7 00:35:21 PDT 2014
  - Fix bad encoding in Pod
 
