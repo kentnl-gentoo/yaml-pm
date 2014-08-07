@@ -20,14 +20,19 @@ my %WriteMakefileArgs = (
   "LICENSE" => "perl",
   "NAME" => "YAML",
   "PREREQ_PM" => {},
-  "VERSION" => "0.98",
+  "TEST_REQUIRES" => {
+    "Test::YAML" => "0.99"
+  },
+  "VERSION" => "0.99",
   "test" => {
     "TESTS" => "t/*.t"
   }
 );
 
 
-my %FallbackPrereqs = ();
+my %FallbackPrereqs = (
+  "Test::YAML" => "0.99"
+);
 
 
 unless ( eval { ExtUtils::MakeMaker->VERSION(6.63_03) } ) {

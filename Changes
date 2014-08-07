@@ -1,3 +1,6 @@
+0.99 Wed Aug  6 17:55:42 PDT 2014
+ - Switch to external Test::Base
+
 0.98 Wed Jul 30 12:32:25 PDT 2014
  - Fix indexing of YAML::Any
  - Change IRC to irc.perl.org#yaml
