@@ -30,7 +30,6 @@ lib/YAML/Tag.pm
 lib/YAML/Tag.pod
 lib/YAML/Types.pm
 lib/YAML/Types.pod
-t/000-compile-modules.t
 t/2-scalars.t
 t/TestYAML.pm
 t/TestYAMLBase.pm
