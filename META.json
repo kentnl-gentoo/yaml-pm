@@ -39,7 +39,7 @@
       },
       "test" : {
          "requires" : {
-            "Test::YAML" : "1.01"
+            "Test::YAML" : "1.05"
          }
       }
    },
@@ -55,6 +55,6 @@
          "web" : "https://github.com/ingydotnet/yaml-pm"
       }
    },
-   "version" : "1.07"
+   "version" : "1.08"
 }
 
