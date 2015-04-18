@@ -61,6 +61,7 @@ t/export.t
 t/freeze-thaw.t
 t/global-api.t
 t/inbox.t
+t/issue-149.t
 t/load-fails.t
 t/load-passes.t
 t/load-slides.t
