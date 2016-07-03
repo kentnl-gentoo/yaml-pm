@@ -7,7 +7,7 @@ build_requires:
 configure_requires:
   ExtUtils::MakeMaker: '0'
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 5.029, CPAN::Meta::Converter version 2.143240'
+generated_by: 'Dist::Zilla version 5.043, CPAN::Meta::Converter version 2.150005'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -15,14 +15,14 @@ meta-spec:
 name: YAML
 no_index:
   directory:
+    - example
     - inc
     - t
     - xt
-    - example
 requires:
   perl: v5.8.1
 resources:
   bugtracker: https://github.com/ingydotnet/yaml-pm/issues
   homepage: https://github.com/ingydotnet/yaml-pm
   repository: https://github.com/ingydotnet/yaml-pm.git
-version: '1.15'
+version: '1.16'
