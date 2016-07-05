@@ -1,3 +1,6 @@
+1.16_001 Tue Jul  5 20:04:10 UTC 2016
+ - Use Mo 0.40
+
 1.16 Sun Jul  3 10:53:06 PDT 2016
  - Apply PR/158 by @bgruening++
  - Fix VERSION issue
