@@ -34,7 +34,6 @@ t/000-compile-modules.t
 t/2-scalars.t
 t/TestYAML.pm
 t/TestYAMLBase.pm
-t/author-pod-syntax.t
 t/basic-tests.t
 t/bugs-emailed.t
 t/bugs-rt.t
