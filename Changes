@@ -1,3 +1,8 @@
+1.19_001 Sun Nov 27 21:26:44 CET 2016
+ - Apply and amend
+ - B::Deparse is loaded at runtime now
+ - New Feature $YAML::Preserve (Apply PR/9 @fmenab++)
+
 1.19 Fri Nov 18 19:46:44 CET 2016
  - Apply PR/164 pod (link to YAML::Shell)
  - Apply PR/151 Fix infinite loop for aliases without a name @bubaflub++

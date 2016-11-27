@@ -1,6 +1,6 @@
 use strict; use warnings;
 package YAML::Any;
-our $VERSION = '1.19';
+our $VERSION = '1.19_001';
 
 use Exporter ();
 
@@ -29,6 +29,7 @@ my @dump_options = qw(
 my @load_options = qw(
     UseCode
     LoadCode
+    Preserve
 );
 
 my @implementations = qw(
