@@ -62,6 +62,7 @@ t/export.t
 t/freeze-thaw.t
 t/global-api.t
 t/inbox.t
+t/io-handle.t
 t/issue-149.t
 t/issue-69.t
 t/load-fails.t

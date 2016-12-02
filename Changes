@@ -1,3 +1,7 @@
+1.20_001 Fri Dec  2 13:59:15 PST 2016
+ - Apply PR/157 and PR/168 (@lameventanas++ @perlpunk++)
+ - Allow reading and writing to IO::Handle
+
 1.20 Fri Dec  2 13:20:33 PST 2016
  - Apply and amend PR/146 (quoted map keys) @preaction++
  - B::Deparse is loaded at runtime now
