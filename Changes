@@ -1,7 +1,7 @@
-1.19_001 Sun Nov 27 21:26:44 CET 2016
- - Apply and amend
+1.20 Fri Dec  2 13:20:33 PST 2016
+ - Apply and amend PR/146 (quoted map keys) @preaction++
  - B::Deparse is loaded at runtime now
- - New Feature $YAML::Preserve (Apply PR/9 @fmenab++)
+ - New Feature $YAML::Preserve (Apply PR/9 @fmenabe++)
 
 1.19 Fri Nov 18 19:46:44 CET 2016
  - Apply PR/164 pod (link to YAML::Shell)
@@ -22,7 +22,7 @@
  - Fix VERSION issue
 
 1.15 Sat Apr 18 17:03:09 CEST 2015
- - Fix Issue
+ - Fix Issue 149.
  - Don't require newlines at end of YAML.
 
 1.14 Sat Jan 17 15:32:18 PST 2015
@@ -87,7 +87,7 @@
  - Change Kwim to Swim
 
 0.95 Sat Jun 14 10:32:08 PDT 2014
- - Fix dumping blessed globs.
+ - Fix dumping blessed globs. Issue 26. mcast++
 
 0.94 Sat Jun 14 10:32:08 PDT 2014
  - Skip a failing test on 5.8 introduced in 0.93
