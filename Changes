@@ -1,3 +1,6 @@
+1.22 Tue Feb 14 23:23:08 CET 2017
+ - Add $YAML::Numify @perlpunk++
+
 1.21 Fri Dec 23 21:19:15 CET 2016
  - Apply PR/171 (fixes issue/109) @perlpunk++
  - No more "used only once" warnings for $YAML::Indent etc.
