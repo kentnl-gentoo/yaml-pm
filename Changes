@@ -1,3 +1,6 @@
+1.23 Sun Feb 19 22:07:57 CET 2017
+ - Fix $YAML::Numify (empty values were converted to 0)
+
 1.22 Tue Feb 14 23:23:08 CET 2017
  - Add $YAML::Numify @perlpunk++
 
